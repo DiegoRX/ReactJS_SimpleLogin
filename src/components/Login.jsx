@@ -66,7 +66,7 @@ class Login extends Component {
                     <div><img src={iconGoogle} alt='Google' />Inicia sesión con Google</div>
                     <div><img src={iconTwitter} alt='Twitter' />Inicia sesión con Twitter</div>
                 </section>
-                <p className='login__container--register'>No tienes ninguna cuenta <Link to='/registro'>Regístrate</Link></p>
+                <p className='login__container--register'>Ya tienes cuenta <Link to='/registro'>Regístrate</Link></p>
             </section>
         </section>
     );

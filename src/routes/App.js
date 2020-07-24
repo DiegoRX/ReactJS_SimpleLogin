@@ -14,7 +14,7 @@ var appFirebase = firebase.initializeApp(firebaseConfig);
 
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import LoginContainer from '../components/LoginContainer';
+import Login from '../container/Login';
 import Registro from '../container/Registro';
 import LandingPage from '../container/LandingPage';
 import NotFound from '../container/NotFound';
@@ -25,10 +25,10 @@ const App = () => (
   <BrowserRouter>
     <Layout>
       <Switch>
-        <Route exact path='/' component={LoginContainer} />
-        <Route exact path='/Registro ' component={Registro} />
+        <Route exact path='/' component={Login} />
+        <Route exact path='/registro' component={Registro} />
         <Route exact path='/LandingPage ' component={LandingPage} />
-        <Route component={LoginContainer} />
+        {/* <Route component={Login} /> */}
       </Switch>
     </Layout>
   </BrowserRouter>

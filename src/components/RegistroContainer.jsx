@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 // import logo from '../images/logo.png';
 
-class Login extends Component {
+class Registro extends Component {
   render() {
     return (
         <section className='login'>
@@ -30,4 +30,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Registro;

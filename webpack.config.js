@@ -1,14 +1,13 @@
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtraxtPlugin = require('mini-css-extract-plugin');
-
-const nodeEnv = process.env.NODE_ENV === 'development';
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -30,35 +29,32 @@ module.exports = {
       },
       {
         test: /\.(s*)css$/,
-        exclude: /node_modules/,
-        use: [{
-          loader: MiniCssExtraxtPlugin.loader,
-        },
-        'css-loader',
-        'sass-loader',
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          'css-loader',
+          'sass-loader',
         ],
       },
       {
-        test: /\.(png|gif|jpg|svg)$/,
+        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|web$/,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: nodeEnv ? 'assets/[name].[ext]' : 'assets/[hash].[ext]',
-            },
-          },
+          { loader: 'url-loader' },
         ],
       },
     ],
   },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './',
+    hot: true,
+  },
   plugins: [
-    new HtmlWebPackPlugin({
+    new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',
     }),
-    new MiniCssExtraxtPlugin({
-      filename: nodeEnv ? 'assets/[name].css' : 'assets/[name].css',
+    new MiniCssExtractPlugin({
+      filename: 'assets/[name].css',
     }),
   ],
-
 };
