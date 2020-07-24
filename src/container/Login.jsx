@@ -1,58 +1,50 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { singInUserEmail } from '../services/firebase/auth';
 import logo from '../images/simple-logo.png';
 import iconGoogle from '../assets/static/ico-google.png';
 import iconTwitter from '../assets/static/ico-twitter.png';
 
-class Login extends Component {
-
-    // const Login = (props) => {
-    //     const [form, setValues] = useState({
-    //       email: '',
-    //     });
+const Login = (props) => {
+        const [form, setValues] = useState({
+          email: '',
+          password: '',
+        });
       
-    //     const handleInput = (event) => {
-    //       setValues({
-    //         ...form,
-    //         [event.target.name]: event.target.value,
-    //       });
-    //     };
+        const handleInput = (event) => {
+          setValues({
+            ...form,
+            [event.target.name]: event.target.value,
+          });
+        };
       
-    //     const handlSubmit = (event) => {
-    //       event.preventDefault();
-    //       props.loginRequest(form);
-    //       props.history.push('/');
-    //     };
-      
-    // firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-    //     // Handle Errors here.
-    //     var errorCode = error.code;
-    //     var errorMessage = error.message;
-    //     // ...
-    //   });email-password.html
-
-  render() {
+        const handleSubmit = (event) => {
+          console.log(form)
+          event.preventDefault();
+          singInUserEmail(form.email, form.password);
+          props.history.push('/landingPage');
+        };
     return (
         <section className='login'>
             <section className='login__container'>
                 <img src={logo} alt='logo' />
                 <h2>Inicia sesión</h2>
-                <form className='login__container--form'>
+                <form onSubmit={handleSubmit} className='login__container--form'>
                     <input 
                         name='email'
                         className='input'
                         type='email'
                         placeholder='Correo'
-                        // onChange={handleInput}
-                        // required                    
+                        onChange={handleInput}
+                        required                    
                     />
                     <input 
                         name='password'
                         className='input'
                         type='password'
                         placeholder='Contraseña'
-                        // onChange={handleInput}
-                        // required
+                        onChange={handleInput}
+                        required
                     />
                 <button type='submit' className='button'>Iniciar sesión</button>
                 <div className='login__container--remember-me'>
@@ -66,11 +58,10 @@ class Login extends Component {
                     <div><img src={iconGoogle} alt='Google' />Inicia sesión con Google</div>
                     <div><img src={iconTwitter} alt='Twitter' />Inicia sesión con Twitter</div>
                 </section>
-                <p className='login__container--register'>No tienes ninguna cuenta <Link to='/registro'>Regístrate</Link></p>
+                <p className='login__container--register'>Ya tienes cuenta <Link to='/registro'>Regístrate</Link></p>
             </section>
         </section>
     );
   }
-}
 
 export default Login;

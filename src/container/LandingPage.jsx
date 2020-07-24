@@ -1,10 +1,10 @@
 import React from 'react';
-import RegistroContainer from '../components/RegistroContainer';
+import HelloWolrd from '../components/helloWorld';
 import '../styles/App.scss';
 
 const LadingPage = () => (
   <>
-    <RegistroContainer />
+    <HelloWolrd />
   </>
 );
 
