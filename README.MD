@@ -20,8 +20,8 @@ _Es una biblioteca Javascript de código abierto diseñada para crear interfaces
 ### React-dom
 _Proporciona métodos específicos del DOM que pueden ser utilizados en el nivel más alto de tu aplicación como una vía de escape del modelo de React si así lo necesitas. La mayoría de tus componentes no deberían necesitar usar este módulo_
 
-### React-dom
-_Permite la navegación entre rutas del proyecto, ideal para mostrar las pantallas requeridas por el cliente
+### React-router
+_Permite la navegación entre rutas del proyecto, ideal para mostrar las pantallas requeridas por el cliente_
 
 ## Dependencias para Desarrollo
 
@@ -47,7 +47,7 @@ _Clona el proyecto puedes descargarlo en una carpeta comprimido desde el boton v
 _tambien puedes clonarlo con el siguiente comando (recuerda que para poder clonar el proyecto debes tener instalado git en tu computador)_
 
 ```
-git clone https://github.com/alejozepol/ProyectoBaseReact.git
+git clone https://github.com/DiegoRX/Simple.git
 ```
 
 #### Instalar paquetes
@@ -81,19 +81,10 @@ NPM run build
 ```
 _Este comando te crea la carpeta dist la cual es la que se va ha cargar en el hosting de tu preferencia para su utilizacion_
 
-## Contribuyendo 🖇️
-
-_Si quieres contribuir a este proyecto puedes hacer un fork y enviarme un pull requests para integrar tus cambios entre todos podemos hacer un mejor proyecto y ser mencionado en la seccion de autores_
 
 ## Autores ✒️
 
-* **Alejandro López Ramírez** - *Desarrollador y consultor de nomina y gestión Humana* - [alejozepol](https://github.com/alejozepol),  http://alejozepol.com, [twitter](https://twitter.com/alejozepol) 
+* **Diego Romero Moreno** - *Desarrollador y Digital Marketer* - [DiegoRX](https://github.com/DiegoRX),  http://xrocket.xyz
 
 _contactame si necesitas ayuda_
 
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invitame una cerveza 🍺. 
-* Da las gracias públicamente 🤓.
-* etc.
