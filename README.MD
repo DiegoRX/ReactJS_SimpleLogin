@@ -1,6 +1,6 @@
 # Proyecto Simple Login
 
-_En este reposito encontratas un proyecto de inicio de seción para la compañía Simple desarrollado en React js, utilizando Firebase Hosting y Firebase Autentication
+_En este reposito encontratas un proyecto de inicio de seción para la compañía Simple desarrollado en React js, utilizando Firebase Hosting y Firebase Autentication_
 
 _Este proyecto cuenta con las dependencias para producción de **Eslint**, **Webpack**, **Babel**, **React**, **React-dom**, **React-router**  y como dependecias de desarrollo **Webpack**, **Loader para ccs y html**_
 
